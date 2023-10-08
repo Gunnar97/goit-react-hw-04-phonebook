@@ -16,7 +16,7 @@ export const App = () => {
   useEffect(() => {
     const storedContacts = JSON.parse(window.localStorage.getItem('Contacts'));
     if (storedContacts) {
-      setFormData({ ...formData, contacts: storedContacts });
+      setFormData(prevData => ({ ...prevData, contacts: storedContacts }));
     }
   }, []);
 
